@@ -1,0 +1,17 @@
+        Tag;                              Keyword;                           ValueInDCM;                            ValueInDB;                ValueInUI;                         
+(0010,0020);                            PatientID;                             07152016;                         
+(0010,0010);                          PatientName;                 CHORDOMA_1^HyperScan;                         
+(0010,0030);                     PatientBirthDate;                             20020629;                                     ;                Invisible
+(0010,0040);                           PatientSex;                                    F;                                     ;                Invisible
+(300A,0002);                          RTPlanLabel;                          5Field Plan;                         
+(300A,0006);                           RTPlanDate;                             20181126;                         
+(300A,0007);                           RTPlanTime;                               154921;                         
+(300A,0003);                           RTPlanName;                         5Field Plan2;                         
+(300A,0004);                    RTPlanDescription;                         
+(300A,000A);                             PlanType;                             CURATIVE;                         
+(0008,0020);                            StudyDate;                             20130409;                                     ;                Invisible
+(0008,0030);                            StudyTime;                               165809;                                     ;                Invisible
+(0008,0050);                      AccessionNumber;                                     ;                                     ;                Invisible
+(0008,1048);                            Physician;                         
+(300E,0008);                         ReviewerName;                   RAYSTATION2_Mevion;                         
+(0008,1070);                        OperatorsName;                                     ;                                     ;
