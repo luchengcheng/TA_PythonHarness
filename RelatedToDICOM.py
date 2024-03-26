@@ -37,10 +37,15 @@ def saveDCMValueToTxt(txtfile, dcmfile, txtfile_dataInDCM):
             if tagExist(dcmfile, tag):
                 formatTag = "0x" + tag[1:-1].replace(",", "")  # change (0010,0010) to 0x00100010
                 value = getValuefromDCMTag(dcmfile, formatTag)
-                text = text.replace(keyword, keyword + ";" + str(value))
+                if value =="":
+                    text = text.replace(keyword + ";", keyword + ";empty")
+                else:
+                    text = text.replace(keyword+ ";" , keyword + ";" + str(value))
+            else:
+                text = text.replace(keyword+ ";" , keyword + ";" + "TagNotExist")
             # else:
             #     print()
-    firstLine = "        Tag;                              Keyword;                           ValueInDCM;                            ValueInDB;                ValueInUI;"
+    firstLine = "        Tag;                              Keyword;                           ValueInDCM;                            ValueInDB;                            ValueInUI;"
     wordList = text.split(";")
     newText = []
     for word in wordList[5:]:
