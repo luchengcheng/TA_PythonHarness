@@ -37,14 +37,35 @@ def saveDCMValueToTxt(txtfile, dcmfile, txtfile_dataInDCM):
             if tagExist(dcmfile, tag):
                 formatTag = "0x" + tag[1:-1].replace(",", "")  # change (0010,0010) to 0x00100010
                 value = getValuefromDCMTag(dcmfile, formatTag)
-                if value =="":
+                if value == "":
                     text = text.replace(keyword + ";", keyword + ";empty")
                 else:
-                    text = text.replace(keyword+ ";" , keyword + ";" + str(value))
+                    text = text.replace(keyword + ";", keyword + ";" + str(value))
             else:
-                text = text.replace(keyword+ ";" , keyword + ";" + "TagNotExist")
+                text = text.replace(keyword + ";", keyword + ";" + "TagNotExist")
+    f.close()
+    formatTxt(text, txtfile_dataInDCM)
             # else:
             #     print()
+    # firstLine = "        Tag;                              Keyword;                           ValueInDCM;                            ValueInDB;                            ValueInUI;"
+    # wordList = text.split(";")
+    # newText = []
+    # for word in wordList[5:]:
+    #     word = word + ";"
+    #     word = word.rjust(38, " ")
+    #     newText.append(word)
+    # finalText = firstLine + "".join(newText)
+    # f.close()
+    # print(text)
+    #
+    # if os.path.exists(txtfile_dataInDCM):
+    #     os.remove(txtfile_dataInDCM)
+    # with open(txtfile_dataInDCM, "w+") as f:
+    #     f.write(finalText)
+    # f.close()
+
+
+def formatTxt(text, fileName):
     firstLine = "        Tag;                              Keyword;                           ValueInDCM;                            ValueInDB;                            ValueInUI;"
     wordList = text.split(";")
     newText = []
@@ -53,12 +74,10 @@ def saveDCMValueToTxt(txtfile, dcmfile, txtfile_dataInDCM):
         word = word.rjust(38, " ")
         newText.append(word)
     finalText = firstLine + "".join(newText)
-    f.close()
     print(text)
-
-    if os.path.exists(txtfile_dataInDCM):
-        os.remove(txtfile_dataInDCM)
-    with open(txtfile_dataInDCM, "w+") as f:
+    if os.path.exists(fileName):
+        os.remove(fileName)
+    with open(fileName, "w+") as f:
         f.write(finalText)
     f.close()
 
