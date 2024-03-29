@@ -1,0 +1,18 @@
+{
+    "300A,0070": {
+        "element": [
+            {
+                "keyword": "NumberOfFractionsPlanned",
+                "valueInDCM": 2,
+                "vr": "IS"
+            },
+            {
+                "keyword": "NumberOfBeams",
+                "valueInDCM": 5,
+                "vr": "IS"
+            }
+        ],
+        "keyword": "FractionGroupSequence",
+        "vr": "SQ"
+    }
+}

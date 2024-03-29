@@ -1,0 +1,10 @@
+{   
+    "300A,0070": {
+        "vr": "SQ",
+        "keyword":"FractionGroupSequence",
+		"element": [{
+            "300A,0078": {"vr": "IS","keyword":"NumberOfFractionsPlanned"},
+            "300A,0080": {"vr": "IS","keyword":"NumberOfBeams"}
+		}]
+    }
+}
